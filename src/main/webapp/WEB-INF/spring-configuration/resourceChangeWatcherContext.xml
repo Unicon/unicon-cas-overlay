@@ -5,14 +5,18 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/task
-                           http://www.springframework.org/schema/task/spring-task.xsd">
+                           http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 
+    <!-- To enable JsonServiceRegistryDao#ServicesManagerInjectableBeanPostProcessor -->
+    <context:component-scan base-package="net.unicon.cas.addons.serviceregistry"/>
 
-    <bean id="reloadadableServicesManagerSupressionAspect" class="net.unicon.cas.addons.serviceregistry.ReloadableServicesManagerSuppressionAspect"/>
+    <bean id="reloadadableServicesManagerSupressionAspect" class="net.unicon.cas.addons.serviceregistry.ReloadableServicesManagerSuppressionAspect"
+          factory-method="aspectOf"/>
 
     <bean id="personAttributesChangeDetectingEventNotifier"
           class="net.unicon.cas.addons.support.ResourceChangeDetectingEventNotifier"

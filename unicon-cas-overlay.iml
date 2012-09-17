@@ -89,7 +89,7 @@
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.10" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.5.8" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.5.8" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.0-M1" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.0-M2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.0.5" level="project" />

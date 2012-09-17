@@ -57,7 +57,7 @@
     <!-- This repository sources its attributes from an instance of a Grouper back-end repository -->
     <!-- <bean id="attributeRepository" class="net.unicon.cas.addons.persondir.GrouperPersonAttributeDao"/> -->
 
-    <bean id="serviceRegistryDao" class="net.unicon.cas.addons.serviceregistry.JsonServiceRegistryDao" init-method="loadServices">
+    <bean id="serviceRegistryDao" class="net.unicon.cas.addons.serviceregistry.JsonServiceRegistryDao" init-method="loadServices" lazy-init="true">
         <constructor-arg index="0" value="${services.registry.config.location}"/>
     </bean>
 
