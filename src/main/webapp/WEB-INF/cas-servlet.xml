@@ -170,13 +170,14 @@
           p:argumentExtractor-ref="casArgumentExtractor"/>
 
     <!-- Lightweight JSON validation response with principal's attributes -->
-    <bean id="jsonSucessView" class="net.unicon.cas.addons.response.ServiceValidateSuccessJsonView"/>
+    <!-- <bean id="jsonSucessView" class="net.unicon.cas.addons.response.ServiceValidateSuccessJsonView"/> -->
+    <!-- p:successView="jsonSucessView"/> -->
     <bean id="serviceValidateController" class="org.jasig.cas.web.ServiceValidateController"
           p:validationSpecificationClass="org.jasig.cas.validation.Cas20WithoutProxyingValidationSpecification"
           p:centralAuthenticationService-ref="centralAuthenticationService"
           p:proxyHandler-ref="proxy20Handler"
-          p:argumentExtractor-ref="casArgumentExtractor"
-          p:successView="jsonSucessView"/>
+          p:argumentExtractor-ref="casArgumentExtractor"/>
+          
 
     <bean id="samlValidateController" class="org.jasig.cas.web.ServiceValidateController"
           p:validationSpecificationClass="org.jasig.cas.validation.Cas20WithoutProxyingValidationSpecification"
