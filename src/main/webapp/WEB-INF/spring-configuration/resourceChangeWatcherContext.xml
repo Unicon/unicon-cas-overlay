@@ -13,7 +13,9 @@
 
 
     <!-- To enable JsonServiceRegistryDao#ServicesManagerInjectableBeanPostProcessor -->
-    <context:component-scan base-package="net.unicon.cas.addons.serviceregistry"/>
+    <context:component-scan base-package="net.unicon.cas.addons.serviceregistry">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
 
     <bean id="reloadadableServicesManagerSupressionAspect" class="net.unicon.cas.addons.serviceregistry.ReloadableServicesManagerSuppressionAspect"
           factory-method="aspectOf"/>
