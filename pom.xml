@@ -6,7 +6,7 @@
     <groupId>net.unicon</groupId>
     <artifactId>unicon-cas-overlay</artifactId>
     <packaging>war</packaging>
-    <version>1.2-cas-addons-1.0.2</version>
+    <version>1.3-cas-addons-1.0.3</version>
 
     <build>
         <plugins>
@@ -88,7 +88,7 @@
         <cas.version>3.5.1</cas.version>
         <apache.commons.pool.version>1.5.6</apache.commons.pool.version>
         <ehcache.version>2.5.0</ehcache.version>
-        <cas-addons.version>1.0.3-SNAPSHOT</cas-addons.version>
+        <cas-addons.version>1.0.3</cas-addons.version>
         <jackson.version>1.9.2</jackson.version>
         <servlet.version>2.5</servlet.version>
         <camel.version>2.10.0</camel.version>
