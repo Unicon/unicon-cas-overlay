@@ -27,9 +27,9 @@
   <context:annotation-config/>
 
   <camelContext xmlns="http://camel.apache.org/schema/spring">
-    <template id="camelTemplate" defaultEndpoint="direct:cas-events"/>
+    <template id="camelTemplate" defaultEndpoint="seda:cas-events"/>
     <route>
-      <from uri="direct:cas-events"/>
+      <from uri="seda:cas-events"/>
       <to uri="websocket://localhost:9090/cas-events?sendToAll=true&amp;staticResources=classpath:."/>
     </route>
   </camelContext>
