@@ -35,6 +35,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.0.2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.0.3-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jasig.cas:cas-server-webapp:war:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-integration-ehcache:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.5.0" level="project" />
