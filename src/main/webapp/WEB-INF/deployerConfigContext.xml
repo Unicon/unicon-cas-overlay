@@ -30,18 +30,19 @@
                 <bean
                         class="org.jasig.cas.authentication.principal.UsernamePasswordCredentialsToPrincipalResolver"
                         p:attributeRepository-ref="attributeRepository"/>
+
+                <bean class="org.jasig.cas.authentication.principal.HttpBasedServiceCredentialsToPrincipalResolver"/>
             </list>
         </property>
 
         <property name="authenticationHandlers">
             <list>
-                <bean class="org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler"/>
 
-                <!-- Authenticate against Stormpath cloud API -->
-                <!-- <bean class="net.unicon.cas.addons.authentication.handler.StormpathAuthenticationHandler"
-                      c:stormpathAccessId="${stormpath.apiKey.id}"
-                      c:stormpathSecretKey="${stormpath.apiKey.secret}"
-                      c:applicationId="${stormpath.application.id}"/> -->
+                <bean class="org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler"
+                      p:httpClient-ref="httpClient" />
+
+                <bean class="org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler"/>
+                
             </list>
         </property>
     </bean>
