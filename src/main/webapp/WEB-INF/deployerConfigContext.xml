@@ -42,12 +42,7 @@
                       p:httpClient-ref="httpClient" />
 
                 <bean class="org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler"/>
-
-                <!-- Authenticate against Stormpath cloud API -->
-                <!-- <bean class="net.unicon.cas.addons.authentication.handler.StormpathAuthenticationHandler"
-                      c:stormpathAccessId="${stormpath.apiKey.id}"
-                      c:stormpathSecretKey="${stormpath.apiKey.secret}"
-                      c:applicationId="${stormpath.application.id}"/> -->
+                
             </list>
         </property>
     </bean>
