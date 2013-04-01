@@ -6,10 +6,15 @@
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:task="http://www.springframework.org/schema/task"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cas="http://unicon.net/schema/cas"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/task
-                           http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+                           http://www.springframework.org/schema/task/spring-task.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                           http://unicon.net/schema/cas
+                           http://unicon.net/schema/cas/cas-addons-1.3.xsd">
 
 
     <!-- To enable JsonServiceRegistryDao#ServicesManagerInjectableBeanPostProcessor -->
@@ -17,22 +22,23 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
     </context:component-scan>
 
-    <bean id="reloadadableServicesManagerSupressionAspect" class="net.unicon.cas.addons.serviceregistry.ReloadableServicesManagerSuppressionAspect"
+    <bean id="reloadadableServicesManagerSupressionAspect"
+          class="net.unicon.cas.addons.serviceregistry.ReloadableServicesManagerSuppressionAspect"
           factory-method="aspectOf"/>
 
-    <bean id="personAttributesChangeDetectingEventNotifier"
-          class="net.unicon.cas.addons.support.ResourceChangeDetectingEventNotifier"
-          c:watchedResource="${person.attributes.config.location}"/>
+    <cas:resource-change-detector id="personAttributesChangeDetectingEventNotifier"
+                                  watched-resource="${person.attributes.config.location}"/>
 
-    <bean id="registeredServicesChangeDetectingEventNotifier"
-          class="net.unicon.cas.addons.support.ResourceChangeDetectingEventNotifier"
-          c:watchedResource="${services.registry.config.location}"/>
+    <cas:resource-change-detector id="registeredServicesChangeDetectingEventNotifier"
+                                  watched-resource="${services.registry.config.location}"/>
 
     <task:scheduler id="springScheduler" pool-size="3"/>
 
     <task:scheduled-tasks scheduler="springScheduler">
-        <task:scheduled ref="personAttributesChangeDetectingEventNotifier" method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="5000"/>
-        <task:scheduled ref="registeredServicesChangeDetectingEventNotifier" method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="5000"/>
+        <task:scheduled ref="personAttributesChangeDetectingEventNotifier"
+                        method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="5000"/>
+        <task:scheduled ref="registeredServicesChangeDetectingEventNotifier"
+                        method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="5000"/>
     </task:scheduled-tasks>
 
 </beans>

@@ -3,8 +3,8 @@
 	| deployerConfigContext.xml centralizes into one file some of the declarative configuration that
 	| all CAS deployers will need to modify.
 	|
-	| This file declares some of the Spring-managed JavaBeans that make up a CAS deployment.  
-	| The beans declared in this file are instantiated at context initialization time by the Spring 
+	| This file declares some of the Spring-managed JavaBeans that make up a CAS deployment.
+	| The beans declared in this file are instantiated at context initialization time by the Spring
 	| ContextLoaderListener declared in web.xml.  It finds this file because this
 	| file is among those declared in the context parameter "contextConfigLocation".
 	|
@@ -17,39 +17,16 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:cas="http://unicon.net/schema/cas"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/security
-                           http://www.springframework.org/schema/security/spring-security.xsd">
+                           http://www.springframework.org/schema/security/spring-security.xsd
+                           http://unicon.net/schema/cas
+                           http://unicon.net/schema/cas/cas-addons-1.3.xsd">
 
-    <bean id="authenticationManager"
-          class="org.jasig.cas.authentication.AuthenticationManagerImpl">
 
-        <property name="credentialsToPrincipalResolvers">
-            <list>
-                <bean
-                        class="org.jasig.cas.authentication.principal.UsernamePasswordCredentialsToPrincipalResolver"
-                        p:attributeRepository-ref="attributeRepository"/>
-
-                <bean class="org.jasig.cas.authentication.principal.HttpBasedServiceCredentialsToPrincipalResolver"/>
-            </list>
-        </property>
-
-        <property name="authenticationHandlers">
-            <list>
-
-                <bean class="org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler"
-                      p:httpClient-ref="httpClient" />
-
-                <bean class="org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler"/>
-                
-            </list>
-        </property>
-    </bean>
-
-    <sec:user-service id="userDetailsService">
-        <sec:user name="@@THIS SHOULD BE REPLACED@@" password="notused" authorities="ROLE_ADMIN"/>
-    </sec:user-service>
+    <cas:default-test-authentication-manager/>
 
     <bean id="attributeRepository" class="net.unicon.cas.addons.persondir.JsonBackedComplexStubPersonAttributeDao" init-method="init">
         <constructor-arg index="0" value="${person.attributes.config.location}"/>
@@ -58,19 +35,12 @@
     <!-- This repository sources its attributes from an instance of a Grouper back-end repository -->
     <!-- <bean id="attributeRepository" class="net.unicon.cas.addons.persondir.GrouperPersonAttributeDao"/> -->
 
-    <bean id="serviceRegistryDao" class="net.unicon.cas.addons.serviceregistry.JsonServiceRegistryDao" init-method="loadServices" lazy-init="true">
-        <constructor-arg index="0" value="${services.registry.config.location}"/>
-    </bean>
+    <cas:json-services-registry/>
+    <cas:inspektr-log-files-audit-manager/>
+    <cas:default-health-check-monitor/>
 
-    <bean id="auditTrailManager" class="com.github.inspektr.audit.support.Slf4jLoggingAuditTrailManager"/>
-
-    <bean id="healthCheckMonitor" class="org.jasig.cas.monitor.HealthCheckMonitor">
-        <property name="monitors">
-            <list>
-                <bean class="org.jasig.cas.monitor.MemoryMonitor"
-                      p:freeMemoryWarnThreshold="10"/>
-            </list>
-        </property>
-    </bean>
+    <sec:user-service id="userDetailsService">
+        <sec:user name="@@THIS SHOULD BE REPLACED@@" password="notused" authorities="ROLE_ADMIN"/>
+    </sec:user-service>
 
 </beans>
