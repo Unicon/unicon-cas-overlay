@@ -8,8 +8,13 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://unicon.net/schema/cas http://unicon.net/schema/cas/cas-addons.xsd">
 
-    <aop:aspectj-autoproxy/>
-    <cas:default-authentication-support/>
-    <cas:default-events-publisher/>
+
+
+    <bean id="serviceAuthorizer" class="net.unicon.cas.addons.serviceregistry.services.authorization.DefaultRegisteredServiceAuthorizer"/>
+
+    <bean id="serviceAuthorizationAction" class="net.unicon.cas.addons.serviceregistry.services.authorization.ServiceAuthorizationAction"
+          c:servicesManager-ref="servicesManager"
+          c:ticketRegistry-ref="ticketRegistry"
+          c:registeredServiceAuthorizer-ref="serviceAuthorizer"/>
 
 </beans>

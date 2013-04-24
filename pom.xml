@@ -88,11 +88,11 @@
         <cas.version>3.5.2</cas.version>
         <apache.commons.pool.version>1.5.6</apache.commons.pool.version>
         <ehcache.version>2.5.0</ehcache.version>
-        <cas-addons.version>1.4</cas-addons.version>
+        <cas-addons.version>1.5-SNAPSHOT</cas-addons.version>
         <jackson.version>1.9.2</jackson.version>
         <servlet.version>2.5</servlet.version>
         <camel.version>2.10.0</camel.version>
-        <shiro.version>1.2.0</shiro.version>
+        <shiro.version>1.2.1</shiro.version>
     </properties>
 
     <repositories>
