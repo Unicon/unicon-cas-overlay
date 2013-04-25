@@ -70,7 +70,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-impl:0.6.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jasig.cas:cas-server-webapp:war:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-integration-ehcache:3.5.2" level="project" />
-    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-core:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.15" level="project" />
@@ -143,7 +143,7 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: edu.internet2.middleware.grouper:grouperClient:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.jdom:jdom:1.1" level="project" />
