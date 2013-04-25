@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:cas="http://unicon.net/schema/cas"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://unicon.net/schema/cas http://unicon.net/schema/cas/cas-addons.xsd">
 
-
-
-    <bean id="serviceAuthorizer" class="net.unicon.cas.addons.serviceregistry.services.authorization.DefaultRegisteredServiceAuthorizer"/>
-
-    <bean id="serviceAuthorizationAction" class="net.unicon.cas.addons.serviceregistry.services.authorization.ServiceAuthorizationAction"
-          c:servicesManager-ref="servicesManager"
-          c:ticketRegistry-ref="ticketRegistry"
-          c:registeredServiceAuthorizer-ref="serviceAuthorizer"/>
+    <cas:service-authorization-action/>
 
 </beans>

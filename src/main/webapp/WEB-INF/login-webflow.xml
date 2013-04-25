@@ -49,8 +49,7 @@
     <!-- Do a service authorization check early without the need to login first -->
     <action-state id="serviceAuthorizationCheck">
         <evaluate expression="serviceAuthorizationCheck"/>
-        <transition on="success" to="generateLoginTicket"/>
-        <transition on="no" to="redirectToUnauthorizedUrl"/>
+        <transition to="generateLoginTicket"/>
     </action-state>
 	
 	<!-- 
@@ -60,16 +59,7 @@
 	<decision-state id="warn">
 		<if test="flowScope.warnCookieValue" then="showWarningView" else="redirect" />
 	</decision-state>
-	
-	<!-- 
-	<action-state id="startAuthenticate">
-		<action bean="x509Check" />
-		<transition on="success" to="sendTicketGrantingTicket" />
-		<transition on="warn" to="warn" />
-		<transition on="error" to="generateLoginTicket" />
-	</action-state>
-	 -->
-    
+
     <!--
    		LPPE transitions begin here: You will also need to
    		move over the 'lppe-configuration.xml' file from the
@@ -215,8 +205,6 @@
     
     <end-state id="viewServiceSsoErrorView" view="viewServiceSsoErrorView" />
 
-    <end-state id="redirectToUnauthorizedUrl" view="externalRedirect:${requestScope.unauthorizedUrl}" />
-
     <!-- Service RBAC external redirect -->
     <end-state id="serviceAuthorizationFailureRedirectView" view="externalRedirect:${requestScope.authorizationFailureRedirectUrl}"/>
 
@@ -226,7 +214,7 @@
         <transition to="viewLoginForm" on-exception="org.jasig.cas.services.UnauthorizedSsoServiceException"/>
         <transition to="viewServiceErrorView" on-exception="org.springframework.webflow.execution.repository.NoSuchFlowExecutionException" />
 		<transition to="viewServiceErrorView" on-exception="org.jasig.cas.services.UnauthorizedServiceException" />
-        <transition to="viewServiceErrorView" on-exception="net.unicon.cas.addons.serviceregistry.services.authorization.RoleBasedServiceAuthorizationException"/>
+        <transition to="serviceAuthorizationFailureRedirectView" on-exception="net.unicon.cas.addons.serviceregistry.services.authorization.RoleBasedServiceAuthorizationException"/>
 	</global-transitions>
 
     <bean-import resource="spring-configuration/serviceAuthorizationContext.xml"/>
