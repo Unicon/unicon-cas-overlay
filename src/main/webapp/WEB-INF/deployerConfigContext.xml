@@ -1,46 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-	| deployerConfigContext.xml centralizes into one file some of the declarative configuration that
-	| all CAS deployers will need to modify.
-	|
-	| This file declares some of the Spring-managed JavaBeans that make up a CAS deployment.
-	| The beans declared in this file are instantiated at context initialization time by the Spring
-	| ContextLoaderListener declared in web.xml.  It finds this file because this
-	| file is among those declared in the context parameter "contextConfigLocation".
-	|
-	| By far the most common change you will need to make in this file is to change the last bean
-	| declaration to replace the default SimpleTestUsernamePasswordAuthenticationHandler with
-	| one implementing your approach for authenticating usernames and passwords.
-	+-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
        xmlns:sec="http://www.springframework.org/schema/security"
        xmlns:cas="http://unicon.net/schema/cas"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/security
-                           http://www.springframework.org/schema/security/spring-security.xsd
+                           http://www.springframework.org/schema/security/spring-security-3.1.xsd
                            http://unicon.net/schema/cas
-                           http://unicon.net/schema/cas/cas-addons-1.3.xsd">
+                           http://unicon.net/schema/cas/cas-addons.xsd">
 
 
     <cas:default-test-authentication-manager/>
 
-    <bean id="attributeRepository" class="net.unicon.cas.addons.persondir.JsonBackedComplexStubPersonAttributeDao" init-method="init">
-        <constructor-arg index="0" value="${person.attributes.config.location}"/>
-    </bean>
-
-    <!-- This repository sources its attributes from an instance of a Grouper back-end repository -->
-    <!-- <bean id="attributeRepository" class="net.unicon.cas.addons.persondir.GrouperPersonAttributeDao"/> -->
+    <cas:json-attribute-repository/>
 
     <cas:json-services-registry/>
+
     <cas:inspektr-log-files-audit-manager/>
+
     <cas:default-health-check-monitor/>
 
     <sec:user-service id="userDetailsService">
-        <sec:user name="@@THIS SHOULD BE REPLACED@@" password="notused" authorities="ROLE_ADMIN"/>
+        <sec:user name="none" authorities="none"/>
     </sec:user-service>
 
 </beans>
