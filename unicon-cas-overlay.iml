@@ -64,15 +64,18 @@
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.3-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.stormpath.sdk:stormpath-sdk-api:0.6.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-httpclient:0.6.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-impl:0.6.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jasig.cas:cas-server-webapp:war:3.5.2" level="project" />
-    <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-integration-ehcache:3.5.2" level="project" />
-    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.5.0" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-core:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.5-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-core:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: com.github.inspektr:inspektr-audit:1.0.7.GA" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.6.10" level="project" />
     <orderEntry type="library" name="Maven: com.github.inspektr:inspektr-common:1.0.7.GA" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.2" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.service.persondir:person-directory-impl:1.5.1" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
@@ -112,8 +115,10 @@
     <orderEntry type="library" name="Maven: org.opensaml:opensaml:2.5.1-1" level="project" />
     <orderEntry type="library" name="Maven: org.opensaml:openws:1.4.2-1" level="project" />
     <orderEntry type="library" name="Maven: org.opensaml:xmltooling:1.3.2-1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.2" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jul-to-slf4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:1.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15:1.45" level="project" />
     <orderEntry type="library" name="Maven: ca.juliusdavies:not-yet-commons-ssl:0.3.9" level="project" />
     <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.1" level="project" />
@@ -132,14 +137,12 @@
     <orderEntry type="library" name="Maven: org.springframework.webflow:spring-js-resources:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-jexl:commons-jexl:1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.0" level="project" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.10" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.1" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.3-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.1.2" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.2.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.8.3" level="project" />
     <orderEntry type="library" name="Maven: edu.internet2.middleware.grouper:grouperClient:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.jdom:jdom:1.1" level="project" />
@@ -158,10 +161,10 @@
     <orderEntry type="library" name="Maven: xpp3:xpp3_min:1.1.4c" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-client:1.12" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.16" level="project" />
-    <orderEntry type="library" name="Maven: com.stormpath.sdk:stormpath-sdk-api:0.6.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-httpclient:0.6.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-impl:0.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.17" level="project" />
+    <orderEntry type="library" name="Maven: com.stormpath.sdk:stormpath-sdk-api:0.7.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-httpclient:0.7.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-impl:0.7.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.httpcomponents:httpclient:4.2.2" level="project" />
@@ -170,12 +173,13 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons-core:1.2.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:jsr311-api:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.16" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-servlet:1.16" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey.contribs:jersey-spring:1.16" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.17" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-servlet:1.17" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey.contribs:jersey-spring:1.17" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-cas:3.1.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas.client:cas-client-core:3.1.12" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:3.1.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:2.1.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-test:3.2.2.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
   </component>
