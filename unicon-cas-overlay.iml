@@ -64,6 +64,22 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-integration-ehcache:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-core:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.4-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.1.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shiro:shiro-core:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.16" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-servlet:1.16" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.jersey.contribs:jersey-spring:1.16" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jasig.cas:cas-server-webapp:war:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-integration-ehcache:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.5.0" level="project" />
@@ -135,7 +151,7 @@
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.10" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.1" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.4-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.4" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.1.1" level="project" />
