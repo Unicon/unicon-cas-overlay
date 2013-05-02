@@ -97,10 +97,14 @@
     <servlet>
         <servlet-name>Jersey REST resource to expose active sso sessions</servlet-name>
         <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.feature.Redirect</param-name>
+            <param-value>false</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>Jersey REST resource to expose active sso sessions</servlet-name>
-        <url-pattern>/sso-sessions</url-pattern>
+        <url-pattern>/sso-sessions/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
