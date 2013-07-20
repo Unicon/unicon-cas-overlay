@@ -6,7 +6,7 @@
     <groupId>net.unicon</groupId>
     <artifactId>unicon-cas-overlay</artifactId>
     <packaging>war</packaging>
-    <version>3.5.2</version>
+    <version>0.0.1</version>
 
     <build>
         <plugins>
@@ -71,7 +71,7 @@
 
     <properties>
         <cas.version>3.5.2</cas.version>
-        <cas-addons.version>1.5.2</cas-addons.version>
+        <cas-addons.version>1.5.4</cas-addons.version>
         <servlet.version>2.5</servlet.version>
     </properties>
 
