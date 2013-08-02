@@ -13,7 +13,7 @@
     </appender>
 
     <appender name="cas" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="/var/log/cas/cas.log" />
+        <param name="File" value="/etc/cas/log/cas/cas.log" />
         <param name="MaxFileSize" value="512KB" />
         <param name="MaxBackupIndex" value="3" />
         <layout class="org.apache.log4j.PatternLayout">
@@ -106,8 +106,16 @@
         <appender-ref ref="cas" />
     </logger>
 
-	<logger name="net.sf.ehcache">
+	 <logger name="net.sf.ehcache">
         <level value="WARN" />
+    </logger>
+
+    <logger name="org.opensaml">
+        <level value="OFF" />
+    </logger>
+
+    <logger name="org.apache.xml">
+        <level value="OFF" />
     </logger>
 
     <!--
