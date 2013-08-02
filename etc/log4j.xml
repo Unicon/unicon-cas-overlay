@@ -106,8 +106,16 @@
         <appender-ref ref="cas" />
     </logger>
 
-	<logger name="net.sf.ehcache">
+	 <logger name="net.sf.ehcache">
         <level value="WARN" />
+    </logger>
+
+    <logger name="org.opensaml">
+        <level value="OFF" />
+    </logger>
+
+    <logger name="org.apache.xml">
+        <level value="OFF" />
     </logger>
 
     <!--
