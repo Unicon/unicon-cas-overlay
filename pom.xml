@@ -56,6 +56,11 @@
             <version>${cas-addons.version}</version>
         </dependency>
         <dependency>
+            <groupId>net.unicon.springframework</groupId>
+            <artifactId>springframework-addons</artifactId>
+            <version>${spring-addons.version}</version>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>${servlet.version}</version>
@@ -66,8 +71,9 @@
 
     <properties>
         <cas.version>3.5.2</cas.version>
-        <cas-addons.version>1.7</cas-addons.version>
+        <cas-addons.version>1.8-SNAPSHOT</cas-addons.version>
         <servlet.version>2.5</servlet.version>
+        <spring-addons.version>0.1-SNAPSHOT</spring-addons.version>
     </properties>
 
     <repositories>
