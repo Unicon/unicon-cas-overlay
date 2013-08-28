@@ -21,52 +21,6 @@
         </layout>
     </appender>
 
-    <!-- Perf4J appenders -->
-    <!--
-       This AsyncCoalescingStatisticsAppender groups StopWatch log messages
-       into GroupedTimingStatistics messages which it sends on the
-       file appender defined below
-    -->
-    <appender name="CoalescingStatistics" class="org.perf4j.log4j.AsyncCoalescingStatisticsAppender">
-        <param name="TimeSlice" value="60000"/>
-        <appender-ref ref="fileAppender"/>
-        <appender-ref ref="graphExecutionTimes"/>
-        <appender-ref ref="graphExecutionTPS"/>
-    </appender>
-
-    <!-- This file appender is used to output aggregated performance statistics -->
-    <appender name="fileAppender" class="org.apache.log4j.FileAppender">
-        <param name="File" value="/var/log/cas/sperfStats.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%m%n"/>
-        </layout>
-    </appender>
-
-       <appender name="graphExecutionTimes" class="org.perf4j.log4j.GraphingStatisticsAppender">
-           <!-- Possible GraphTypes are Mean, Min, Max, StdDev, Count and TPS -->
-           <param name="GraphType" value="Mean"/>
-           <!-- The tags of the timed execution blocks to graph are specified here -->
-           <param name="TagNamesToGraph" value="DESTROY_TICKET_GRANTING_TICKET,GRANT_SERVICE_TICKET,GRANT_PROXY_GRANTING_TICKET,VALIDATE_SERVICE_TICKET,CREATE_TICKET_GRANTING_TICKET" />
-       </appender>
-
-       <appender name="graphExecutionTPS" class="org.perf4j.log4j.GraphingStatisticsAppender">
-           <param name="GraphType" value="TPS" />
-           <param name="TagNamesToGraph" value="DESTROY_TICKET_GRANTING_TICKET,GRANT_SERVICE_TICKET,GRANT_PROXY_GRANTING_TICKET,VALIDATE_SERVICE_TICKET,CREATE_TICKET_GRANTING_TICKET" />
-       </appender>
-
-    <!-- Loggers -->
-    <!--
-      The Perf4J logger. Note that org.perf4j.TimingLogger is the value of the
-      org.perf4j.StopWatch.DEFAULT_LOGGER_NAME constant. Also, note that
-      additivity is set to false, which is usually what is desired - this means
-      that timing statements will only be sent to this logger and NOT to
-      upstream loggers.
-    -->
-    <logger name="org.perf4j.TimingLogger" additivity="false">
-        <level value="WARN" />
-        <appender-ref ref="CoalescingStatistics" />
-    </logger>
-
     <!--
         WARNING: Setting the org.springframework logger to DEBUG displays debug information about
         the request parameter values being bound to the command objects.  This could expose your

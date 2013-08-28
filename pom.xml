@@ -23,6 +23,7 @@
                             <excludes>
                                 <exclude>WEB-INF/cas.properties</exclude>
                                 <exclude>WEB-INF/classes/log4j.xml</exclude>
+                                <exclude>WEB-INF/lib/perf4j-0.9.14-log4jonly.jar</exclude>
                             </excludes>
                         </overlay>
                     </overlays>
@@ -54,6 +55,12 @@
             <groupId>net.unicon.cas</groupId>
             <artifactId>cas-addons</artifactId>
             <version>${cas-addons.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jasig.cas</groupId>
+                    <artifactId>cas-server-core</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.unicon.springframework</groupId>
