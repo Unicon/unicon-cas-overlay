@@ -1,18 +1,41 @@
 apply plugin: "war"
 
 repositories {
-   mavenLocal()
-   mavenCentral artifactUrls: ["http://developer.jasig.org/repo/content/groups/m2-legacy/", "http://central.maven.org/maven2/"]
+    mavenLocal()
+    mavenCentral artifactUrls: ["http://developer.jasig.org/repo/content/groups/m2-legacy/", "http://central.maven.org/maven2/"]
+    mavenRepo url: "http://oss.sonatype.org/content/repositories/releases/"
+    mavenRepo url: "https://oss.sonatype.org/content/repositories/snapshots/"
+}
+
+project.ext {
+    casAddonsVersion = "1.8-SNAPSHOT"
+    springAddonsVersion = "0.1-SNAPSHOT"
+    casVersion = "3.5.2"
+    servletVersion = "2.5"
 }
 
 dependencies {
-   runtime("org.jasig.cas:cas-server-webapp:3.5.2@war") {
-       transitive = true
-   }
+    runtime("org.jasig.cas:cas-server-webapp:${project.casVersion}@war") {
+		transitive = true
+        exclude module: "perf4j"
+	}
+    compile("net.unicon.cas:cas-addons:${project.casAddonsVersion}") {
+        exclude module: "cas-server-core"
+    }
+    compile("net.unicon.springframework:springframework-addons:${project.springAddonsVersion}")
+    providedRuntime("javax.servlet:servlet-api:${project.servletVersion}")
 }
 
 apply from: "https://bitbucket.org/scalding/gradle-playground/raw/master/war-overlay.gradle"
+// apply from: "../gradle-playground/war-overlay-clean.gradle"
 
 task wrapper(type: Wrapper) {
-   gradleVersion = "1.7"
+    gradleVersion = "1.7"
+}
+
+war {
+    ["cas.properties", "classes/log4j.xml", "lib/perf4j-0.9.14-log4jonly.jar"].each {
+        exclude "WEB-INF/${it}"
+    }
+    baseName "cas"
 }
