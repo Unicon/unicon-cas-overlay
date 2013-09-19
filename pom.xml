@@ -55,12 +55,7 @@
             <groupId>net.unicon.cas</groupId>
             <artifactId>cas-addons</artifactId>
             <version>${cas-addons.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jasig.cas</groupId>
-                    <artifactId>cas-server-core</artifactId>
-                </exclusion>
-            </exclusions>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>net.unicon.springframework</groupId>
