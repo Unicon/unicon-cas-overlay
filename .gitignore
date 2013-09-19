@@ -7,4 +7,7 @@ target/
 .DS_Store
 .idea
 overlays/
+.gradle/
+build/
+
 
