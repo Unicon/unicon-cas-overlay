@@ -8,8 +8,8 @@ repositories {
 }
 
 project.ext {
-    casAddonsVersion = "1.8-SNAPSHOT"
-    springAddonsVersion = "0.1-SNAPSHOT"
+    casAddonsVersion = "1.8"
+    springAddonsVersion = "0.1"
     casVersion = "3.5.2"
     servletVersion = "2.5"
 }
