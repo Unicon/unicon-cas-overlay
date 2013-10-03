@@ -82,8 +82,9 @@
     <orderEntry type="library" name="Maven: joda-time:joda-time:1.5.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.2" level="project" />
     <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.5-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.jasig.cas:cas-server-webapp:war:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.8-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.jasig.cas:cas-server-webapp:war:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.8" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-core:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: com.github.inspektr:inspektr-audit:1.0.7.GA" level="project" />
@@ -193,7 +194,7 @@
     <orderEntry type="library" name="Maven: com.sun.jersey.contribs:jersey-spring:1.17.1" level="project" />
     <orderEntry type="library" name="Maven: com.yubico:yubico-validation-client2:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:2.1.3" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.springframework:springframework-addons:0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.springframework:springframework-addons:0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
   </component>
 </module>
