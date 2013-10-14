@@ -22,18 +22,13 @@
                     </hz:tcp-ip>
                 </hz:join>
             </hz:network>
-            <hz:map name="tickets"                    
-                    backup-count="1"
-                    max-size="100"
-                    eviction-percentage="100"
-                    read-backup-data="true"
-                    eviction-policy="NONE"
-                    merge-policy="com.hazelcast.map.merge.PassThroughMergePolicy"/>
         </hz:config>
 
     </hz:hazelcast>
 
     <bean id="ticketRegistry" class="net.unicon.cas.addons.ticket.registry.HazelcastTicketRegistry"
-          c:hz-ref="hzInstance"/>
+          c:hz-ref="hzInstance"
+          c:ticketGrantingTicketTimeoutInSeconds="${tgt.maxTimeToLiveInSeconds}"
+          c:serviceTicketTimeoutInSeconds="${st.timeToKillInSeconds}"/>
 
 </beans>
