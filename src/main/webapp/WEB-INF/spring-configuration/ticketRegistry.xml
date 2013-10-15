@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:c="http://www.springframework.org/schema/c"
-       xmlns:hz="http://www.hazelcast.com/schema/spring"
+       xmlns:hz="http://www.hazelcast.com/schema/spring" xmlns:cas="http://unicon.net/schema/cas"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.hazelcast.com/schema/spring
-                           http://www.hazelcast.com/schema/spring/hazelcast-spring-3.0.xsd">
+                           http://www.hazelcast.com/schema/spring/hazelcast-spring-3.0.xsd
+                           http://unicon.net/schema/cas
+                           http://unicon.net/schema/cas/cas-addons.xsd">
 
 
-    <hz:hazelcast id="hzInstance">
+    <hz:hazelcast id="hazelcast">
         <hz:config>
             <hz:properties>
                 <hz:property name="hazelcast.logging.type">slf4j</hz:property>
@@ -23,12 +24,10 @@
                 </hz:join>
             </hz:network>
         </hz:config>
-
     </hz:hazelcast>
 
-    <bean id="ticketRegistry" class="net.unicon.cas.addons.ticket.registry.HazelcastTicketRegistry"
-          c:hz-ref="hzInstance"
-          c:ticketGrantingTicketTimeoutInSeconds="${tgt.maxTimeToLiveInSeconds}"
-          c:serviceTicketTimeoutInSeconds="${st.timeToKillInSeconds}"/>
+    <cas:hazelcast-ticket-registry hazelcast-instance="hazelcast"
+                                   tgt-entries-ttl-seconds="${tgt.maxTimeToLiveInSeconds}"
+                                   st-entries-ttl-seconds="${st.timeToKillInSeconds}"/>
 
 </beans>
