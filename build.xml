@@ -69,10 +69,12 @@
 
 	<target name="clean" description="Clean deployed artifacts and logs">
 		<delete file="${catalina.home}/webapps/${ant.project.name}.war" verbose="false" failonerror="true" />
-		
+		<delete file="${catalina.home}\conf\Catalina\localhost\cas.xml" verbose="false" failonerror="true" />
 		<delete file="${catalina.home}/bin/${ant.project.name}.log" verbose="false" failonerror="true" />
 		
 		<delete dir="${catalina.home}/webapps/${ant.project.name}" verbose="false" includeemptydirs="true" failonerror="true" />
+		<delete file="${catalina.home}/webapps/cas-management.war" verbose="false" includeemptydirs="true" failonerror="true" />
+		<delete dir="${catalina.home}/webapps/cas-management" verbose="false" includeemptydirs="true" failonerror="true" />
 		<delete dir="/etc/cas/log" verbose="false" includeemptydirs="true" failonerror="true" />
 
 		<delete dir="${catalina.home}/work/Catalina" verbose="false" includeemptydirs="true"  failonerror="true"/>
@@ -113,8 +115,15 @@
 		</exec>
 	</target>
 
-	<target name="deploy" depends="copy" description="Clean, package and deploy artifacts" />
+	<target name="fragment" description="Create a context fragment for deployment of the CAS web application inside tomcat" depends="package">
+		<copy overwrite="true" todir="${catalina.home}\conf\Catalina\localhost" file="cas.xml" verbose="true">
+			<filterset begintoken="$" endtoken="$">
+				<filter token="CAS_HOME" value="${basedir}" />
+			</filterset>	
+		</copy>
+	</target>
 
+	<target name="deploy" depends="fragment" description="Clean, package and deploy artifacts" />
 
 	<target name="help" description="Prints instructions on how to run the build.">
 		<echo message="Use 'ant -projecthelp' to see all available commands" />
