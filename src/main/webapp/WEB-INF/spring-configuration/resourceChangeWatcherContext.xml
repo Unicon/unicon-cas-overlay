@@ -25,17 +25,17 @@
 
     <cas:disable-default-registered-services-reloading/>
     
-    <resource:change-detector id="personAttributesChangeDetectingEventNotifier" watched-resource="${person.attributes.config.location}"/>
+    <cas:resource-change-detector id="personAttributesChangeDetectingEventNotifier" watched-resource="${person.attributes.config.location}"/>
     
-    <resource:change-detector id="registeredServicesChangeDetectingEventNotifier" watched-resource="${services.registry.config.location}"/>
+    <cas:resource-change-detector id="registeredServicesChangeDetectingEventNotifier" watched-resource="${services.registry.config.location}"/>
 
     <task:scheduler id="springScheduler" pool-size="3"/>
 
     <task:scheduled-tasks scheduler="springScheduler">
         <task:scheduled ref="personAttributesChangeDetectingEventNotifier"
-                        method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="5000"/>
+                        method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="3000"/>
         <task:scheduled ref="registeredServicesChangeDetectingEventNotifier"
-                        method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="5000"/>
+                        method="notifyOfTheResourceChangeEventIfNecessary" fixed-delay="3000"/>
     </task:scheduled-tasks>
 
 </beans>

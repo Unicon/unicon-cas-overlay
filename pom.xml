@@ -52,10 +52,30 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-core</artifactId>
+            <version>${cas.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>net.unicon.cas</groupId>
             <artifactId>cas-addons</artifactId>
             <version>${cas-addons.version}</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jasig.cas</groupId>
+                    <artifactId>cas-server-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jasig.cas</groupId>
+                    <artifactId>cas-server-support-generic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jasig.cas</groupId>
+                    <artifactId>cas-server-support-ldap</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.unicon.springframework</groupId>
@@ -72,7 +92,7 @@
     </dependencies>
 
     <properties>
-        <cas.version>3.5.2</cas.version>
+        <cas.version>4.0.0-RC3</cas.version>
         <cas-addons.version>1.9.1</cas-addons.version>
         <servlet.version>2.5</servlet.version>
         <spring-addons.version>0.1</spring-addons.version>
