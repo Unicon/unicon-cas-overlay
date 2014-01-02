@@ -12,79 +12,19 @@
         </webroots>
       </configuration>
     </facet>
-    <facet type="jpa" name="JPA">
-      <configuration>
-        <setting name="validation-enabled" value="true" />
-        <setting name="provider-name" value="" />
-        <datasource-mapping />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/classes/META-INF/persistence.xml" />
-      </configuration>
-    </facet>
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset1" name="XML Application Context" removed="false">
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/securityContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/propertyFileConfigurer.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/ticketExpirationPolicies.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/resourceChangeWatcherContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/securityContext.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/ticketGrantingTicketCookieGenerator.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/unused-spring-configuration/clearpass-configuration.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/ticketRegistry.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/cas-servlet.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/unused-spring-configuration/ticketRegistry.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/filters.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/log4jConfiguration.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/propertyFileConfigurer.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/unused-spring-configuration/mbeans.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/cas-servlet.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/deployerConfigContext.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/view/views.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/uniqueIdGenerators.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/warnCookieGenerator.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/unused-spring-configuration/clearpass-configuration.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/activeSsoSessionsReportContext.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/unused-spring-configuration/lppe-configuration.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/casEventsPublisherContext.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/auditTrailContext.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/spring-configuration/argumentExtractorsConfiguration.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/deployerConfigContext.xml</file>
-          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.1/WEB-INF/restlet-servlet.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.3-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.stormpath.sdk:stormpath-sdk-api:0.6.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-httpclient:0.6.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-impl:0.6.0" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.1.2" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.16" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.16" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey:jersey-servlet:1.16" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.jersey.contribs:jersey-spring:1.16" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.5-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.2" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:1.5.1" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.2" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.5-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.8-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jasig.cas:cas-server-webapp:war:3.5.2" level="project" />
-    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.8" level="project" />
+    <orderEntry type="library" name="Maven: net.unicon.cas:cas-addons:1.9.1" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-core:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: com.github.inspektr:inspektr-audit:1.0.7.GA" level="project" />
@@ -148,7 +88,7 @@
     <orderEntry type="library" name="Maven: org.springframework.webflow:spring-js-resources:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-jexl:commons-jexl:1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.0" level="project" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:2.1" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.3" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.10" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.jasig.cas:cas-server-support-generic:3.5.2" level="project" />
@@ -183,8 +123,8 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.stormpath.sdk:stormpath-sdk-impl:0.8.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.11" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.httpcomponents:httpclient:4.2.2" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.httpcomponents:httpcore:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.2.5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:1.0.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons-core:1.2.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.7.1" level="project" />
@@ -193,7 +133,12 @@
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-servlet:1.17.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey.contribs:jersey-spring:1.17.1" level="project" />
     <orderEntry type="library" name="Maven: com.yubico:yubico-validation-client2:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:2.1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:2.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:1.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: redis.clients:jedis:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-pool:commons-pool:1.5.5" level="project" />
+    <orderEntry type="library" name="Maven: com.hazelcast:hazelcast:3.1" level="project" />
+    <orderEntry type="library" name="Maven: com.hazelcast:hazelcast-spring:3.1" level="project" />
     <orderEntry type="library" name="Maven: net.unicon.springframework:springframework-addons:0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
   </component>
