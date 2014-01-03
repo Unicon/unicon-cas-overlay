@@ -123,19 +123,8 @@
 
   	<action-state id="realSubmit">
         <evaluate expression="authenticationViaFormAction.submit(flowRequestContext, flowScope.credentials, messageContext)" />
-        <!--
-	      To enable LPPE on the 'warn' replace the below transition with:
-	      <transition on="warn" to="passwordPolicyCheck" />
-
-	      CAS will attempt to transition to the 'warn' when there's a 'renew' parameter
-	      and there exists a ticketGrantingId and a service for the incoming request.
-	    -->
-		<transition on="warn" to="warn" />
-		<!--
-	      To enable LPPE on the 'success' replace the below transition with:
-	      <transition on="success" to="passwordPolicyCheck" />
-	    -->
-		<transition on="success" to="sendTicketGrantingTicket" />
+		<transition on="warn" to="startDuoSecondFactorAuthentication" /> <!-- explicit Duo 2fa for now -->
+		<transition on="success" to="startDuoSecondFactorAuthentication" /> <!-- explicit Duo 2fa for now -->
 		<transition on="error" to="generateLoginTicket" />
 		<transition on="accountDisabled" to="casAccountDisabledView" />
 	    <transition on="mustChangePassword" to="casMustChangePassView" />
@@ -144,6 +133,40 @@
 	    <transition on="badWorkstation" to="casBadWorkstationView" />
 	    <transition on="passwordExpired" to="casExpiredPassView" />
 	</action-state>
+
+    <!-- Duo 2fa support -->
+    <action-state id="startDuoSecondFactorAuthentication">
+        <evaluate expression="generateLoginTicketAction.generate(flowRequestContext)" />
+        <transition on="generated" to="generateDuoCredentials" />
+    </action-state>
+
+    <action-state id="generateDuoCredentials">
+        <evaluate expression="generateDuoCredentialsAction.createDuoCredentials(flowRequestContext)" />
+        <transition on="created" to="viewLoginFormTF" />
+        <transition on="error" to="generateLoginTicket" />
+    </action-state>
+
+    <view-state id="viewLoginFormTF" view="casDuoLoginView" model="duoCredentials">
+        <binder>
+            <binding property="signedDuoResponse" />
+        </binder>
+        <on-entry>
+            <evaluate expression="duoAuthenticationService.generateSignedRequestToken(flowScope.duoCredentials.getPrincipal().getId())" result="viewScope.sigRequest"/>
+            <set name="viewScope.apiHost" value="duoAuthenticationService.getDuoApiHost()" />
+            <set name="viewScope.commandName" value="'duoCredentials'" />
+        </on-entry>
+        <transition on="submit" bind="true" validate="true" to="realSubmitTF">
+            <evaluate expression="authenticationViaFormAction.doBind(flowRequestContext, flowScope.duoCredentials)" />
+        </transition>
+    </view-state>
+
+    <action-state id="realSubmitTF">
+        <evaluate expression="authenticationViaFormAction.submit(flowRequestContext, flowScope.duoCredentials, messageContext)" />
+        <transition on="warn" to="warn" />
+        <transition on="success" to="sendTicketGrantingTicket" />
+        <transition on="error" to="viewLoginForm" />
+    </action-state>
+    <!-- END OF Duo 2fa support -->
 	
 	<action-state id="sendTicketGrantingTicket">
         <evaluate expression="sendTicketGrantingTicketAction" />

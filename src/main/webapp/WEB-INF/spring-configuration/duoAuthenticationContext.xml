@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:cas="http://unicon.net/schema/cas"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd http://unicon.net/schema/cas http://unicon.net/schema/cas/cas-addons.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
     <bean id="duoAuthenticationService" class="net.unicon.cas.overlay.authentication.duo.DuoAuthenticationService"
           c:duoIntegrationKey="${duo.integration.key}"
           c:duoSecretKey="${duo.secret.key}"
-          c:duoApplicationKey="${duo.application.key}"/>
+          c:duoApplicationKey="${duo.application.key}"
+          c:duoApiHost="${duo.api.host}"/>
 
     <bean id="duoAuthenticationHandler" class="net.unicon.cas.overlay.authentication.duo.DuoAuthenticationHandler"
           c:duoAuthenticationService-ref="duoAuthenticationService"/>
+
+    <bean id="duoCredentialsToPrincipalResolver" class="net.unicon.cas.overlay.authentication.duo.DuoCredentialsToPrincipalResolver"/>
 
     <bean id="generateDuoCredentialsAction" class="net.unicon.cas.overlay.authentication.duo.GenerateDuoCredentialsAction"
           c:authenticationSupport-ref="authenticationSupport"/>

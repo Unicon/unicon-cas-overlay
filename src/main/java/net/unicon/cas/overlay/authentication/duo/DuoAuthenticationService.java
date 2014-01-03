@@ -16,12 +16,20 @@ public final class DuoAuthenticationService {
 
     private final String duoApplicationKey;
 
-    public DuoAuthenticationService(String duoIntegrationKey, String duoSecretKey, String duoApplicationKey) {
+    private final String duoApiHost;
+
+
+
+    public DuoAuthenticationService(String duoIntegrationKey, String duoSecretKey, String duoApplicationKey, String duoApiHost) {
         this.duoIntegrationKey = duoIntegrationKey;
         this.duoSecretKey = duoSecretKey;
         this.duoApplicationKey = duoApplicationKey;
+        this.duoApiHost = duoApiHost;
     }
 
+    public String getDuoApiHost() {
+        return duoApiHost;
+    }
 
     public String generateSignedRequestToken(String username) {
         return DuoWeb.signRequest(this.duoIntegrationKey, this.duoSecretKey, this.duoApplicationKey, username);

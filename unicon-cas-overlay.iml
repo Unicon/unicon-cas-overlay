@@ -12,6 +12,41 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/activeSsoSessionsReportContext.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/argumentExtractorsConfiguration.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/auditTrailContext.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/cas-servlet.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/casEventsListenerContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/casEventsPublisherContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/casFeaturesDisablingContext.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/unused-spring-configuration/clearpass-configuration.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/deployerConfigContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/deployerConfigContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/duoAuthenticationContext.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/filters.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/log4jConfiguration.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/unused-spring-configuration/lppe-configuration.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/unused-spring-configuration/mbeans.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/propertyFileConfigurer.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/propertyFileConfigurer.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/resourceChangeWatcherContext.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/restlet-servlet.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/securityContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/securityContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-configuration/serviceAuthorizationContext.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/ticketExpirationPolicies.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/ticketGrantingTicketCookieGenerator.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/ticketRegistry.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/uniqueIdGenerators.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/view/views.xml</file>
+          <file>file://$MODULE_DIR$/overlays/org.jasig.cas.cas-server-webapp-3.5.2/WEB-INF/spring-configuration/warnCookieGenerator.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />

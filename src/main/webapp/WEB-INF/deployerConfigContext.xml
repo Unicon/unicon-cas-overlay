@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:sec="http://www.springframework.org/schema/security"
        xmlns:cas="http://unicon.net/schema/cas"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -11,7 +12,26 @@
                            http://unicon.net/schema/cas/cas-addons.xsd">
 
 
-    <cas:default-test-authentication-manager/>
+    <bean id="authenticationManager"
+          class="org.jasig.cas.authentication.AuthenticationManagerImpl">
+
+        <property name="credentialsToPrincipalResolvers">
+            <list>
+                <bean class="org.jasig.cas.authentication.principal.UsernamePasswordCredentialsToPrincipalResolver"
+                      p:attributeRepository-ref="attributeRepository"/>
+                <bean class="org.jasig.cas.authentication.principal.HttpBasedServiceCredentialsToPrincipalResolver"/>
+                <ref bean="duoCredentialsToPrincipalResolver"/>
+            </list>
+        </property>
+        <property name="authenticationHandlers">
+            <list>
+                <bean class="org.jasig.cas.authentication.handler.support.HttpBasedServiceCredentialsAuthenticationHandler"
+                      p:httpClient-ref="httpClient" />
+                <bean class="org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler"/>
+                <ref bean="duoAuthenticationHandler"/>
+            </list>
+        </property>
+    </bean>
 
     <cas:json-attribute-repository/>
 
