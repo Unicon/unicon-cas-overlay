@@ -1,0 +1,44 @@
+apply from: "http://dl.bintray.com/scalding/generic/waroverlay.gradle"
+
+task wrapper(type: Wrapper) {
+    gradleVersion = project."gradle.version"
+}
+
+repositories {
+    mavenCentral artifactUrls: ["http://developer.jasig.org/repo/content/groups/m2-legacy/", "http://central.maven.org/maven2/"]
+    maven {url "http://oss.sonatype.org/content/repositories/releases/"}
+    maven {url "https://oss.sonatype.org/content/repositories/snapshots/"}
+}
+
+project.ext {
+    casAddonsVersion = "1.8"
+    springAddonsVersion = "0.1"
+    casVersion = "3.5.2"
+    servletVersion = "2.5"
+}
+
+dependencies {
+    runtime("org.jasig.cas:cas-server-webapp:${project."cas.version"}@war") {
+        transitive = true
+        exclude module: "perf4j"
+    }
+    compile("net.unicon.cas:cas-addons:${project."cas-addons.version"}") {
+        exclude module: "cas-server-core"
+        exclude module: "cas-server-support-generic"
+        exclude module: "cas-server-support-ldap"
+    }
+    compile("org.jasig.cas:cas-server-core:${project."cas.version"}")
+    compile("net.unicon.springframework:springframework-addons:${project."spring-addons.version"}")
+    providedRuntime("javax.servlet:servlet-api:${project."servlet.version"}")
+}
+
+warOverlay {
+    includeWarJars false
+}
+
+war {
+    ["cas.properties", "classes/log4j.xml", "lib/perf4j-0.9.14-log4jonly.jar"].each {
+        exclude "WEB-INF/${it}"
+    }
+    baseName "cas"
+}
