@@ -178,7 +178,7 @@
 	</decision-state>
 	
 	<action-state id="generateServiceTicket">
-        <evaluate expression="serviceAuthorizationAction"/>
+        <!-- <evaluate expression="serviceAuthorizationAction"/> -->
         <evaluate expression="generateServiceTicketAction" />
 		<transition on="success" to ="warn" />
 		<transition on="error" to="generateLoginTicket" />
