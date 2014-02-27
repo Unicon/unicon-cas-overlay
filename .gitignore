@@ -9,6 +9,5 @@ target/
 overlays/
 .gradle/
 build/
-
-
-/bin
+bin/
+*.iml
