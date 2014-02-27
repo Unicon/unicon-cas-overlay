@@ -6,7 +6,7 @@
     <groupId>net.unicon</groupId>
     <artifactId>unicon-cas-overlay</artifactId>
     <packaging>war</packaging>
-    <version>0.0.1</version>
+    <version>1.0</version>
 
     <build>
         <plugins>
@@ -73,6 +73,7 @@
 
     <properties>
         <cas.version>3.5.2</cas.version>
+
         <cas-addons.version>1.9.1</cas-addons.version>
         <servlet.version>2.5</servlet.version>
         <spring-addons.version>0.1</spring-addons.version>
