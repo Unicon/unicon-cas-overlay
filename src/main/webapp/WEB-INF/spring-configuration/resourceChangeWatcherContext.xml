@@ -5,7 +5,6 @@
        xmlns:task="http://www.springframework.org/schema/task"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:cas="http://unicon.net/schema/cas"
-       xmlns:resource="http://unicon.net/schema/resource"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/task
@@ -13,9 +12,8 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd
                            http://unicon.net/schema/cas
-                           http://unicon.net/schema/cas/cas-addons.xsd
-                           http://unicon.net/schema/resource
-                           http://unicon.net/schema/resource/resource.xsd">
+                           http://unicon.net/schema/cas/cas-addons.xsd">
+
 
 
     <!-- To enable JsonServiceRegistryDao#ServicesManagerInjectableBeanPostProcessor -->
@@ -25,9 +23,9 @@
 
     <cas:disable-default-registered-services-reloading/>
     
-    <resource:change-detector id="personAttributesChangeDetectingEventNotifier" watched-resource="${person.attributes.config.location}"/>
+    <cas:resource-change-detector id="personAttributesChangeDetectingEventNotifier" watched-resource="${person.attributes.config.location}"/>
     
-    <resource:change-detector id="registeredServicesChangeDetectingEventNotifier" watched-resource="${services.registry.config.location}"/>
+    <cas:resource-change-detector id="registeredServicesChangeDetectingEventNotifier" watched-resource="${services.registry.config.location}"/>
 
     <task:scheduler id="springScheduler" pool-size="3"/>
 
