@@ -24,6 +24,20 @@
                                 <exclude>WEB-INF/cas.properties</exclude>
                                 <exclude>WEB-INF/classes/log4j.xml</exclude>
                                 <exclude>WEB-INF/lib/perf4j-0.9.14-log4jonly.jar</exclude>
+                                <!-- Note, if all the options are not used, then some of these files may be needed. -->
+                                <!--  Be sure to validate the build. If NO version of these files is included, you should remove these exclusions -->
+                                <excludes>**/commons-beanutils-1.7.0.jar</excludes>
+                                <excludes>**/commons-codec-1.4.jar</excludes>
+                                <excludes>**/commons-collections-3.2.jar</excludes>
+                                <excludes>**/commons-logging-1.1.jar</excludes>
+                                <excludes>**/ezmorph-1.0.4.jar</excludes>
+                                <excludes>**/javassist-3.7.ga.jar</excludes>
+                                <excludes>**/jcl-over-slf4j-1.7.1.jar</excludes>
+                                <excludes>**/joda-time-2.1.jar</excludes>
+                                <excludes>**/json-lib-2.2.3-jdk15.jar</excludes>
+                                <excludes>**/slf4j-api-1.7.1.jar</excludes>
+                                <excludes>**/slf4j-log4j12-1.7.1.jar</excludes>
+                                <excludes>**/stax-api-1.0-2.jar</excludes>
                             </excludes>
                         </overlay>
                     </overlays>
@@ -56,6 +70,16 @@
             <artifactId>cas-addons</artifactId>
             <version>${cas-addons.version}</version>
             <scope>compile</scope>
+            <exclusions>
+            <exclusion>
+                <groupId>javax.xml.stream</groupId>
+                <artifactId>stax-api</artifactId>
+            </exclusion>
+            <exclusion>
+                <groupId>org.codehaus.jettison</groupId>
+                <artifactId>jettison</artifactId>
+            </exclusion>
+         </exclusions>
         </dependency>
         <dependency>
             <groupId>net.unicon.springframework</groupId>
