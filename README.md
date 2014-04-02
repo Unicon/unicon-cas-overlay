@@ -7,7 +7,7 @@ This overlay could be freely used as a starting template for local CAS maven war
 
 # Versions
 ```xml
-<cas.version>3.5.2</cas.version>
+<cas.version>3.5.2.1</cas.version>
 <cas-addons.version>1.11</cas-addons.version>
 ```
 
