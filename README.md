@@ -1,4 +1,4 @@
-unicon-cas-overlay
+unicon-cas-overlay [![Build Status](https://travis-ci.org/Unicon/unicon-cas-overlay.svg)](https://travis-ci.org/Unicon/unicon-cas-overlay)
 ==================
 
 Generic CAS maven war overlay to excercise the latest versions of CAS as well as the latest features of [cas-addons](https://github.com/Unicon/cas-addons)
