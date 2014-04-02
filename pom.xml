@@ -96,7 +96,7 @@
     </dependencies>
 
     <properties>
-        <cas.version>3.5.2</cas.version>
+        <cas.version>3.5.2.1</cas.version>
 
         <cas-addons.version>1.11</cas-addons.version>
         <servlet.version>2.5</servlet.version>
