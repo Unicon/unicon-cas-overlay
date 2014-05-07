@@ -27,7 +27,7 @@
     </hz:hazelcast>
 
     <cas:hazelcast-ticket-registry hazelcast-instance="hazelcast"
-                                   tgt-entries-ttl-seconds="${tgt.maxTimeToLiveInSeconds}"
-                                   st-entries-ttl-seconds="${st.timeToKillInSeconds}"/>
+                                   tgt-entries-ttl-seconds="${tgt.maxTimeToLiveInSeconds:28800}"
+                                   st-entries-ttl-seconds="${st.timeToKillInSeconds:7200}"/>
 
 </beans>
