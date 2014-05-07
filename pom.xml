@@ -33,15 +33,16 @@
                                 <exclude>**/ezmorph-1.0.4.jar</exclude>
                                 <exclude>**/javassist-3.7.ga.jar</exclude>
                                 <exclude>**/jcl-over-slf4j-1.7.1.jar</exclude>
+                                <exclude>**/jdom-1.0.jar</exclude>
                                 <exclude>**/joda-time-2.1.jar</exclude>
                                 <exclude>**/json-lib-2.2.3-jdk15.jar</exclude>
                                 <exclude>**/slf4j-api-1.7.1.jar</exclude>
                                 <exclude>**/slf4j-log4j12-1.7.1.jar</exclude>
-                                <exclude>**/stax-api-1.0-2.jar</exclude>
-                                <exclude>**/spring-aop-3.1.1.RELEASE.jar</exclude>
-                                <exclude>**/spring-beans-3.1.1.RELEASE.jar</exclude>
-                                <exclude>**/spring-context-3.1.1.RELEASE.jar</exclude>
-                                <exclude>**/spring-core-3.1.1.RELEASE.jar</exclude>
+                                <exclude>**/stax-api-1.0-2.jar</exclude> 
+                                <exclude>**/spring-aop-3.2.4.RELEASE.jar</exclude>
+                                <exclude>**/spring-beans-3.2.4.RELEASE.jar</exclude>
+                                <exclude>**/spring-context-3.2.4.RELEASE.jar</exclude>
+                                <exclude>**/spring-core-3.2.4.RELEASE.jar</exclude>
                                 <exclude>**/spring-security-core-3.1.0.RELEASE.jar</exclude>
                             </excludes>
                         </overlay>
@@ -76,19 +77,15 @@
             <version>${cas-addons.version}</version>
             <scope>compile</scope>
             <exclusions>
-            <exclusion>
-                <groupId>javax.xml.stream</groupId>
-                <artifactId>stax-api</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>org.codehaus.jettison</groupId>
-                <artifactId>jettison</artifactId>
-            </exclusion>
-            <exclusion>
-            <groupId>jdom</groupId>
-            <artifactId>jdom</artifactId>
-            </exclusion>
-         </exclusions>
+               <exclusion>
+                   <groupId>javax.xml.stream</groupId>
+                   <artifactId>stax-api</artifactId>
+               </exclusion>
+               <exclusion>
+                   <groupId>org.codehaus.jettison</groupId>
+                   <artifactId>jettison</artifactId>
+               </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.unicon.springframework</groupId>
