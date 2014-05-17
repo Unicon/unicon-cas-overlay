@@ -11,22 +11,11 @@
 	<cacheManagerPeerProviderFactory 
 	            class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
 	            properties="peerDiscovery=manual,
-				rmiUrls=//localhost:40002/org.jasig.cas.ticket.ServiceTicket|//localhost:40002/org.jasig.cas.ticket.TicketGrantingTicket" />
+				rmiUrls=//localhost:40001/org.jasig.cas.ticket.ServiceTicket|//localhost:40001/org.jasig.cas.ticket.TicketGrantingTicket" />
    
    <!-- Port where it listens for peers. Should be different from peer provider port defined above -->
    <cacheManagerPeerListenerFactory 
             class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
-            properties="port=40001" />
+            properties="port=40001,remoteObjectPort=40002" />
 
-    <defaultCache
-            maxElementsInMemory="10000"
-            eternal="false"
-            timeToIdleSeconds="300"
-            timeToLiveSeconds="300"
-            overflowToDisk="true"
-            maxElementsOnDisk="10000000"
-            diskPersistent="false"
-            diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU"
-            />
 </ehcache>
