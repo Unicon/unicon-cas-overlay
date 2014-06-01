@@ -11,7 +11,12 @@
                            http://unicon.net/schema/cas/cas-addons.xsd">
 
 
-    <cas:default-test-authentication-manager/>
+    <cas:authentication-manager-with-accept-users-handler attribute-repository-for-principal-resolver="attributeRepository">
+        <cas:user name="casuser" password="casuser"/>
+        <cas:user name="test" password="test"/>
+        <cas:user name="u1" password="u1"/>
+        <cas:user name="u2" password="u2"/>
+    </cas:authentication-manager-with-accept-users-handler>
 
     <cas:json-attribute-repository/>
 
