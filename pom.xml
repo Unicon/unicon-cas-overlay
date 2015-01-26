@@ -38,7 +38,7 @@
                                 <exclude>**/json-lib-2.2.3-jdk15.jar</exclude>
                                 <exclude>**/slf4j-api-1.7.1.jar</exclude>
                                 <exclude>**/slf4j-log4j12-1.7.1.jar</exclude>
-                                <exclude>**/stax-api-1.0-2.jar</exclude> 
+                                <exclude>**/stax-api-1.0-2.jar</exclude>
                                 <exclude>**/spring-aop-3.2.4.RELEASE.jar</exclude>
                                 <exclude>**/spring-beans-3.2.4.RELEASE.jar</exclude>
                                 <exclude>**/spring-context-3.2.4.RELEASE.jar</exclude>
@@ -71,6 +71,14 @@
             <type>war</type>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+          <groupId>org.jasig.cas</groupId>
+          <artifactId>cas-server-core</artifactId>
+          <version>${cas.version}</version>
+          <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>net.unicon.cas</groupId>
             <artifactId>cas-addons</artifactId>
@@ -102,9 +110,9 @@
     </dependencies>
 
     <properties>
-        <cas.version>3.5.2.1</cas.version>
+        <cas.version>3.5.3</cas.version>
 
-        <cas-addons.version>1.11.1</cas-addons.version>
+        <cas-addons.version>1.13</cas-addons.version>
         <servlet.version>2.5</servlet.version>
         <spring-addons.version>0.1</spring-addons.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

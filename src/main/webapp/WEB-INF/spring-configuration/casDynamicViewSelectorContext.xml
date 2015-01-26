@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cas="http://unicon.net/schema/cas"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://unicon.net/schema/cas http://unicon.net/schema/cas/cas-addons.xsd">
+
+       <cas:request-param-login-view-selector>
+         <cas:login-view param="custom" view="casCustomView"/>         
+       </cas:request-param-login-view-selector>
+
+</beans>

@@ -33,15 +33,15 @@
 	<decision-state id="ticketGrantingTicketExistsCheck">
 		<if test="flowScope.ticketGrantingTicketId != null" then="hasServiceCheck" else="gatewayRequestCheck" />
 	</decision-state>
-    
+
 	<decision-state id="gatewayRequestCheck">
 		<if test="requestParameters.gateway != '' and requestParameters.gateway != null and flowScope.service != null" then="gatewayServicesManagementCheck" else="serviceAuthorizationCheck" />
 	</decision-state>
-	
+
 	<decision-state id="hasServiceCheck">
 		<if test="flowScope.service != null" then="renewRequestCheck" else="viewGenericLoginSuccess" />
 	</decision-state>
-	
+
 	<decision-state id="renewRequestCheck">
 		<if test="requestParameters.renew != '' and requestParameters.renew != null" then="serviceAuthorizationCheck" else="generateServiceTicket" />
 	</decision-state>
@@ -51,8 +51,8 @@
         <evaluate expression="serviceAuthorizationCheck"/>
         <transition to="generateLoginTicket"/>
     </action-state>
-	
-	<!-- 
+
+	<!--
 		The "warn" action makes the determination of whether to redirect directly to the requested
 		service or display the "confirmation" page to go back to the server.
 	-->
@@ -102,13 +102,13 @@
 	<end-state id="casBadHoursView" view="casBadHoursView" />
 	<end-state id="casBadWorkstationView" view="casBadWorkstationView" />
 	<!-- LPPE transitions end here... -->
-	
+
 	<action-state id="generateLoginTicket">
         <evaluate expression="generateLoginTicketAction.generate(flowRequestContext)" />
 		<transition on="generated" to="viewLoginForm" />
 	</action-state>
-    
-	<view-state id="viewLoginForm" view="casLoginView" model="credentials">
+
+	<view-state id="viewLoginForm" view="${casLoginViewSelector.selectLoginView(flowRequestContext)}" model="credentials">
         <binder>
             <binding property="username" />
             <binding property="password" />
@@ -144,7 +144,7 @@
 	    <transition on="badWorkstation" to="casBadWorkstationView" />
 	    <transition on="passwordExpired" to="casExpiredPassView" />
 	</action-state>
-	
+
 	<action-state id="sendTicketGrantingTicket">
         <evaluate expression="sendTicketGrantingTicketAction" />
 		<transition to="serviceCheck" />
@@ -153,7 +153,7 @@
 	<decision-state id="serviceCheck">
 		<if test="flowScope.service != null" then="generateServiceTicket" else="viewGenericLoginSuccess" />
 	</decision-state>
-	
+
 	<action-state id="generateServiceTicket">
         <evaluate expression="serviceAuthorizationAction"/>
         <evaluate expression="generateServiceTicketAction" />
@@ -176,14 +176,14 @@
         <if test="requestScope.response.responseType.name() == 'POST'" then="postView" else="redirectView" />
     </decision-state>
 
-	<!-- 
+	<!--
 		the "viewGenericLogin" is the end state for when a user attempts to login without coming directly from a service.
 		They have only initialized their single-sign on session.
 	-->
 	<end-state id="viewGenericLoginSuccess" view="casLoginGenericSuccessView" />
 
-	<!-- 
-		The "showWarningView" end state is the end state for when the user has requested privacy settings (to be "warned") to be turned on.  It delegates to a 
+	<!--
+		The "showWarningView" end state is the end state for when the user has requested privacy settings (to be "warned") to be turned on.  It delegates to a
 		view defines in default_views.properties that display the "Please click here to go to the service." message.
 	-->
 	<end-state id="showWarningView" view="casLoginConfirmView" />
@@ -195,14 +195,14 @@
         </on-entry>
     </end-state>
 
-	<!-- 
+	<!--
 		The "redirect" end state allows CAS to properly end the workflow while still redirecting
 		the user back to the service required.
 	-->
 	<end-state id="redirectView" view="externalRedirect:${requestScope.response.url}" />
-	
+
 	<end-state id="viewServiceErrorView" view="viewServiceErrorView" />
-    
+
     <end-state id="viewServiceSsoErrorView" view="viewServiceSsoErrorView" />
 
     <!-- Service RBAC external redirect -->
