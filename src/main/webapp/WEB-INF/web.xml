@@ -11,6 +11,7 @@
         <param-value>
             /WEB-INF/spring-configuration/*.xml
             /WEB-INF/deployerConfigContext.xml
+            classpath*:/META-INF/spring/*.xml
         </param-value>
     </context-param>
 
@@ -105,6 +106,11 @@
     <servlet-mapping>
         <servlet-name>Jersey REST resource to expose active sso sessions</servlet-name>
         <url-pattern>/sso-sessions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>cas</servlet-name>
+        <url-pattern>/v1/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

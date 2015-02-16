@@ -81,6 +81,13 @@
 
         <dependency>
             <groupId>net.unicon.cas</groupId>
+            <artifactId>cas35-addon-rest</artifactId>
+            <version>1.0.0-RC3</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.unicon.cas</groupId>
             <artifactId>cas-addons</artifactId>
             <version>${cas-addons.version}</version>
             <scope>compile</scope>
@@ -112,7 +119,7 @@
     <properties>
         <cas.version>3.5.3</cas.version>
 
-        <cas-addons.version>1.13</cas-addons.version>
+        <cas-addons.version>1.14</cas-addons.version>
         <servlet.version>2.5</servlet.version>
         <spring-addons.version>0.1</spring-addons.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
