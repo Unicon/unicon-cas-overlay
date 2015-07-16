@@ -117,9 +117,9 @@
     </dependencies>
 
     <properties>
-        <cas.version>3.5.3</cas.version>
+        <cas.version>3.6.0</cas.version>
 
-        <cas-addons.version>1.14</cas-addons.version>
+        <cas-addons.version>1.16</cas-addons.version>
         <servlet.version>2.5</servlet.version>
         <spring-addons.version>0.1</spring-addons.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
